@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %} Bosh sahifa {% endblock title%}
+
+{% block content %}
+
+
+        <div class="container">
+            <div class="row">
+                <div class="mt-4"></div>
+                <div class="mt-4">
+                  <h2 class="text-center">Barcha o`quvchilar baholari</h2>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Ism</th>
+                          <th scope="col">Familiya</th>
+                          <th scope="col">Fan</th>
+                          <th scope="col">Baho</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for  student in students %}
+                        <tr>
+                          <th scope="row">{{ student.id}}</th>
+                          <td>{{student.student.first_name }}</td>
+                          <td>{{ student.student.last_name }}</td>
+                          <td>{{ student.subject.name }}</td>
+                          <td><a href="{% url 'update_grade' student.id %}">{{student.grade}}</a></td>
+                        </tr>
+                      {% endfor %}
+
+                      </tbody>
+                    </table>
+
+                </div>
+                <div class="mt-4"></div>
+            </div>
+        </div>
+{% endblock content %}
+
+

@@ -1,0 +1,22 @@
+{% extends  'base.html' %}
+{% block title %} KIrish {% endblock title %}
+
+{% block content %}
+<div class="container mt-5" >
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+    <h3> Saytga Kirish</h3>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Kirish</button>
+      <span> Accountingiz yoqmi?  <a href="{% url 'royxatdan_otish' %}">Ro`yxatdan o`tsh</a></span>
+    </form>
+    <div class="col-4"></div>
+  </div>
+</div>
+
+
+
+{% endblock content %}

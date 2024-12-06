@@ -1,0 +1,22 @@
+{% extends  'base.html' %}
+{% block title %} Ro`yxatdan o`tish {% endblock title %}
+
+{% block content %}
+<div class="container mt-5" >
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+    <h3> Ro`yxatdan o`tish</h3>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Yuborish</button>
+      <span> Accountingiz bormi?  <a href="{% url 'login' %}">Tizmga kirish</a></span>
+    </form>
+    <div class="col-4"></div>
+  </div>
+</div>
+
+
+
+{% endblock content %}

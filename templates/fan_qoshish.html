@@ -1,0 +1,15 @@
+{% extends  'base.html' %}
+{% block title %} Fan qo`shish {% endblock title %}
+
+{% block content %}
+    <div class="container">
+
+    <h3 class="text-center">Yangi  Fan qo`shish</h3>
+      <form method="POST">
+        {% csrf_token %}
+        {{ forms.as_p }}
+        <button type="sumbit" class="btn btn-success">qo`shish</button>
+      </form>
+    </div>
+
+{% endblock content %}
